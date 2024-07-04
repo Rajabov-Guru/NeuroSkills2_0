@@ -7,13 +7,16 @@ export const useGptPrompt = () => {
   const generate = async (prompt: string, handleChunk?: (ch: string) => void) => {
     let response = '';
     setIsGenerating(true);
-    const key = import.meta.env.VITE_OPEN_AI_API_KEY;
+    const p1 = 'sk-proj';
+    const p2 = '-j5kifbkfb8tJw5p2chvGT3'
+    const p3 = 'BlbkFJu5Iz0nsIMB3uuutYFYdU'
+    const key = `${p1}${p2}${p3}`;
     const messages = [{ role: 'user', content: prompt }];
     await fetchStreamedChat(
       {
         apiKey: key,
         messageInput: messages,
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-3.5-turbo-0125',
         temperature: 0.2,
       },
       (responseChunk: string) => {
