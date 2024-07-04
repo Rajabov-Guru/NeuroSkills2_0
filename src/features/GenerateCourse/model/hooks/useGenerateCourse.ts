@@ -22,7 +22,7 @@ export const useGenerateCourse = () => {
     dispatch(addCourse(course));
     await generateDescription(course);
     const topics = await generateTopics(course);
-    for (let i = 0; i < 1; i += 1) {
+    for (let i = 0; i < topics.length; i += 1) {
       await generateTopicContent(topics[i]);
       await generateQuiz(topics[i]);
     }
