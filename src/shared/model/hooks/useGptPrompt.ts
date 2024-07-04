@@ -7,9 +7,9 @@ export const useGptPrompt = () => {
   const generate = async (prompt: string, handleChunk?: (ch: string) => void) => {
     let response = '';
     setIsGenerating(true);
-    const p1 = 'sk-proj';
-    const p2 = '-j5kifbkfb8tJw5p2chvGT3'
-    const p3 = 'BlbkFJu5Iz0nsIMB3uuutYFYdU'
+    const p1 = 'bla';
+    const p2 = '-bla'
+    const p3 = 'bla'
     const key = `${p1}${p2}${p3}`;
     const messages = [{ role: 'user', content: prompt }];
     await fetchStreamedChat(
